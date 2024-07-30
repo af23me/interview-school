@@ -1,0 +1,29 @@
+<% if @sections.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Section</th>
+        <th>Teacher</th>
+        <th>Class location</th>
+        <th>Week days</th>
+        <th>Time</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @sections.each do |section| %>
+        <tr>
+          <td><%= section.title %></td>
+          <td><%= section.teacher.full_name %></td>
+          <td><%= "Building: #{section.classroom.building}; Room: ##{section.classroom.room_number}" %></td>
+          <td><%= weekdays_string(section.weekdays) %></td>
+          <td><%= "Form #{section.start_at.strftime('%H:%M')} to #{section.end_at.strftime('%H:%M')}" %></td>
+          <td><%= button_to "Join", students_sections_path, method: "post", params: { student_section: { section_id: section.id } }  %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h3>There is no sections to join</h3>
+<% end %>

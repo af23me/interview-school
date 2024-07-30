@@ -1,0 +1,12 @@
+en:
+  meta:
+    title: Boilerplate
+    description: Boilerplate desc
+  section:
+    weekday_0: 'Monday'
+    weekday_1: 'Tuesday'
+    weekday_2: 'Wednesday'
+    weekday_3: 'Thursday'
+    weekday_4: 'Friday'
+    weekday_5: 'Saturday'
+    weekday_6: 'Sunday'
